@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>沖繩跨年之旅 2024-2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #F8F7F2;
+            --card-bg: #FFFFFF;
+            --primary-text: #2C2C2C;
+            --secondary-text: #666666;
+            --accent-blue: #A5C9CA;
+            --accent-red: #E27367;
+            --accent-gold: #D4AF37;
+            --tag-bg: #F0F0F0;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            margin: 0;
+            padding-bottom: 80px;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 40px 20px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #E7F0F2, var(--bg-color));
+        }
+
+        h1 { font-size: 1.5rem; margin-bottom: 5px; letter-spacing: 2px; }
+        .date-range { font-size: 0.9rem; color: var(--secondary-text); }
+
+        /* 行程卡片樣式 */
+        .container { padding: 15px; }
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin: 25px 0 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .day-title { font-size: 1.2rem; font-weight: bold; color: var(--primary-text); }
+        .weather { font-size: 0.85rem; color: var(--secondary-text); }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .time-slot { font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); margin-bottom: 5px; }
+        .location-name { font-size: 1.05rem; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; }
+        .location-name i { margin-right: 8px; font-size: 0.9rem; }
+
+        /* 標籤樣式 */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .tag-must-eat { background: #FFE5E5; color: #D63031; } /* 必吃美食 */
+        .tag-must-buy { background: #FFF4E0; color: #B53; } /* 必買伴手禮 */
+        .tag-tips { background: #E3F2FD; color: #1976D2; } /* 攻略 */
+
+        .description { font-size: 0.9rem; color: var(--secondary-text); margin: 8px 0; }
+        
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: var(--primary-text);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        .btn-nav i { margin-right: 5px; }
+
+        /* 分頁切換器 */
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+            z-index: 1000;
+        }
+        .tab-item { text-align: center; color: var(--secondary-text); text-decoration: none; font-size: 0.7rem; }
+        .tab-item.active { color: var(--accent-blue); }
+        .tab-item i { display: block; font-size: 1.2rem; margin-bottom: 3px; }
+
+        /* 資訊清單樣式 */
+        .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.9rem; }
+        .info-label { color: var(--secondary-text); }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>沖繩跨年之旅 [cite: 1]</h1>
+    <div class="date-range">2024.12.27 - 12.30</div>
+</header>
+
+<div id="itinerary" class="container tab-content">
+    <div class="day-header">
+        <span class="day-title">Day 1 12/27 (Fri) [cite: 2]</span>
+        <span class="weather">☁️ 21°C / 18°C</span>
+    </div>
+    <div class="card">
+        <div class="time-slot">08:30</div>
+        <div class="location-name"><i class="fas fa-shinto-tome"></i>波上宮 [cite: 4]</div>
+        <div class="tag tag-tips">攻略：懸崖神社景觀 [cite: 5]</div>
+        <div class="tag tag-must-buy">必買：紅型健康守</div>
+        <div class="description">沖繩代表性神社，建議到旁邊橋上拍攝建築全景。[cite: 5, 6]</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=波上宮" class="btn-nav"><i class="fas fa-location-arrow"></i>導航</a>
+    </div>
+
+    <div class="card">
+        <div class="time-slot">11:30</div>
+        <div class="location-name"><i class="fas fa-utensils"></i>午餐：燒肉敘敘苑 [cite: 7, 10]</div>
+        <div class="tag tag-must-eat">必點：和牛午間套餐 [cite: 10]</div>
+        <div class="description">Parco City 店具備無敵海景。 [cite: 10]</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=敘敘苑+Parco+City" class="btn-nav"><i class="fas fa-location-arrow"></i>導航</a>
+    </div>
+
+    <div class="day-header">
+        <span class="day-title">Day 2 12/28 (Sat) [cite: 16]</span>
+        <span class="weather">☀️ 20°C / 17°C</span>
+    </div>
+    <div class="card">
+        <div class="time-slot">12:25</div>
+        <div class="location-name"><i class="fas fa-fish"></i>美麗海水族館 [cite: 23]</div>
+        <div class="tag tag-tips">海豚秀：13:00 / 15:00 [cite: 24]</div>
+        <div class="description">觀賞黑潮之海大水槽，行程含門票與輕食。 [cite: 24, 25]</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=美麗海水族館" class="btn-nav"><i class="fas fa-location-arrow"></i>導航</a>
+    </div>
+
+    <div class="day-header">
+        <span class="day-title">Day 3 12/29 (Sun) [cite: 29]</span>
+        <span class="weather">🌤️ 22°C / 18°C</span>
+    </div>
+    <div class="card">
+        <div class="time-slot">12:30</div>
+        <div class="location-name"><i class="fas fa-fish-fins"></i>糸滿魚市場 [cite: 34]</div>
+        <div class="tag tag-must-eat">必吃：現烤生蠔、海膽 [cite: 35]</div>
+        <div class="description">南部最強海鮮集中地。 [cite: 35]</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=糸滿魚市場" class="btn-nav"><i class="fas fa-location-arrow"></i>導航</a>
+    </div>
+</div>
+
+<div id="info" class="container tab-content hidden">
+    <div class="day-header"><span class="day-title">必要資訊</span></div>
+    <div class="card">
+        <div class="info-row"><span class="info-label">緊急聯絡 (警局)</span><span>110</span></div>
+        <div class="info-row"><span class="info-label">緊急聯絡 (救護)</span><span>119</span></div>
+        <div class="info-row"><span class="info-label">自駕提示</span><span>攜帶正本駕照+日文譯本</span></div>
+    </div>
+
+    <div class="day-header"><span class="day-title">預算統計</span></div>
+    <div class="card">
+        <div class="info-row"><span class="info-label">餐費預算</span><span>¥40,000</span></div>
+        <div class="info-row"><span class="info-label">景點門票</span><span>¥10,000</span></div>
+        <div class="info-row"><span class="info-label">租車油資</span><span>¥30,000</span></div>
+    </div>
+</div>
+
+<nav class="tab-bar">
+    <a href="#" class="tab-item active" onclick="switchTab('itinerary')">
+        <i class="fas fa-calendar-alt"></i>行程
+    </a>
+    <a href="#" class="tab-item" onclick="switchTab('info')">
+        <i class="fas fa-info-circle"></i>資訊/記帳
+    </a>
+</nav>
+
+<script>
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(tabId).classList.remove('hidden');
+        
+        document.querySelectorAll('.tab-item').forEach(el => el.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
